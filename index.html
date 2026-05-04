@@ -3,789 +3,534 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 7 Exam Study Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Unit 7 Exam Cheat Sheet — Full Version A</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f5f0e8;
-    --paper: #fffdf8;
-    --ink: #1a1a1a;
-    --muted: #6b6560;
-    --rule: #ddd8ce;
-    --ss: #2563eb;
-    --re: #16a34a;
-    --ab: #dc2626;
-    --hi: #d97706;
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --border: #2a2a2a;
+    --accent: #e8ff47;
+    --accent2: #47c8ff;
+    --accent3: #ff6b47;
+    --text: #e8e8e8;
+    --muted: #888;
+    --green: #47ffb0;
   }
 
-  * { margin:0; padding:0; box-sizing:border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
     background: var(--bg);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
     font-size: 15px;
-    line-height: 1.65;
+    line-height: 1.7;
+    padding: 40px 20px;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   /* HEADER */
-  header {
-    background: var(--ink);
-    color: #fff;
-    padding: 36px 28px 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+  .header {
+    border: 1px solid var(--accent);
+    padding: 32px;
+    margin-bottom: 40px;
+    position: relative;
   }
-  .header-top {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  header h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    letter-spacing: 3px;
-    line-height: 1;
-  }
-  header .sub {
-    font-size: 13px;
-    color: #aaa;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: 'DM Mono', monospace;
-  }
-  .standards-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-  }
-  .std-pill {
-    font-family: 'DM Mono', monospace;
+  .header::before {
+    content: 'CHEM';
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background: var(--bg);
+    padding: 0 10px;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    padding: 4px 12px;
-    border-radius: 3px;
-    letter-spacing: 1px;
-    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 4px;
   }
-  .std-ss { background: var(--ss); }
-  .std-re { background: var(--re); }
-  .std-ab { background: var(--ab); }
-
-  /* STICKY NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 99;
-    background: var(--ink);
-    border-top: 1px solid #333;
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
+  h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
   }
-  nav a {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 10px 18px;
-    text-decoration: none;
-    color: #888;
-    white-space: nowrap;
-    border-right: 1px solid #333;
-    transition: all 0.15s;
-  }
-  nav a:hover { color: #fff; background: #222; }
-  nav a.ss { border-bottom: 2px solid var(--ss); }
-  nav a.re { border-bottom: 2px solid var(--re); }
-  nav a.ab { border-bottom: 2px solid var(--ab); }
-
-  /* LAYOUT */
-  main { max-width: 960px; margin: 0 auto; padding: 36px 18px 80px; }
-
-  /* SECTION */
-  section { margin-bottom: 52px; }
-  .sec-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .sec-label.ss { color: var(--ss); }
-  .sec-label.re { color: var(--re); }
-  .sec-label.ab { color: var(--ab); }
-  h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 2px;
-    border-bottom: 2px solid var(--rule);
-    padding-bottom: 10px;
-    margin-bottom: 22px;
-    color: var(--ink);
-  }
-  h3 {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 24px 0 12px;
-    color: var(--muted);
-  }
-
-  /* DEFINITION LIST */
-  .def-list { display: flex; flex-direction: column; gap: 0; }
-  .def-row {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 0;
-    border-bottom: 1px solid var(--rule);
-    padding: 11px 0;
-    align-items: baseline;
-  }
-  .def-row:first-child { border-top: 1px solid var(--rule); }
-  .def-term {
-    font-family: 'DM Mono', monospace;
+  .subtitle {
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 12px;
-    font-weight: 500;
-    color: var(--ss);
-    padding-right: 16px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-top: 8px;
   }
-  .def-def { font-size: 14px; color: var(--ink); }
 
-  /* ALERT BOX */
-  .alert {
-    border-left: 3px solid;
-    padding: 13px 16px;
-    margin: 14px 0;
-    background: var(--paper);
-    border-radius: 0 6px 6px 0;
-    font-size: 14px;
+  /* SECTIONS */
+  .section {
+    margin-bottom: 48px;
   }
-  .alert.ss { border-color: var(--ss); }
-  .alert.re { border-color: var(--re); }
-  .alert.ab { border-color: var(--ab); }
-  .alert.hi { border-color: var(--hi); }
-  .alert strong { display: block; margin-bottom: 4px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-  .alert.ss strong { color: var(--ss); }
-  .alert.re strong { color: var(--re); }
-  .alert.ab strong { color: var(--ab); }
-  .alert.hi strong { color: var(--hi); }
 
-  /* FORMULA CARDS */
-  .formula-row {
+  .section-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--accent);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* MCQ CARDS */
+  .mcq-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
     gap: 12px;
-    margin-bottom: 20px;
   }
-  .fc {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 14px 16px;
+
+  .mcq-card {
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 16px;
+    align-items: start;
+    transition: border-color 0.2s;
   }
-  .fc-name {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  .mcq-card:hover {
+    border-color: var(--accent2);
+  }
+
+  .q-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .q-body {}
+  .q-text {
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    margin-bottom: 7px;
-  }
-  .fc-eq {
-    font-family: 'DM Mono', monospace;
     font-size: 14px;
-    font-weight: 500;
-    color: var(--ink);
     margin-bottom: 6px;
   }
-  .fc-note { font-size: 12px; color: var(--muted); }
-
-  /* WORKED PROBLEM */
-  .wp {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-  }
-  .wp-q {
-    font-weight: 500;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .wp-steps {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    background: #f0ebe0;
-    padding: 11px 14px;
-    border-radius: 4px;
-    line-height: 2;
-    white-space: pre-wrap;
-    color: #2d2d2d;
-  }
-  .wp-ans {
-    margin-top: 10px;
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ab);
-  }
-
-  /* TABLE */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin: 10px 0 20px;
-    background: var(--paper);
-  }
-  thead th {
-    background: var(--ink);
-    color: #fff;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 10px 12px;
-    text-align: left;
-  }
-  tbody tr { border-bottom: 1px solid var(--rule); }
-  tbody tr:hover { background: #f8f4ed; }
-  tbody td { padding: 9px 12px; }
-  tbody td:first-child { font-weight: 600; }
-  .ans { font-family: 'DM Mono', monospace; color: var(--ab); }
-
-  /* MC PRACTICE */
-  .mc { margin-bottom: 20px; }
-  .mc-q { font-size: 14px; font-weight: 500; margin-bottom: 8px; }
-  .mc-opts { display: flex; flex-direction: column; gap: 4px; padding-left: 4px; }
-  .mc-opt {
-    font-size: 13px;
-    padding: 6px 10px;
-    border-radius: 4px;
-    display: flex;
-    gap: 8px;
-    align-items: baseline;
-  }
-  .mc-opt.correct {
-    background: #dcfce7;
+  .q-answer {
+    color: var(--accent);
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
-    color: #166534;
+    font-size: 14px;
   }
-  .mc-opt .letter {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    min-width: 16px;
-  }
-  .why {
+  .q-note {
     font-size: 12px;
     color: var(--muted);
     margin-top: 4px;
-    padding-left: 10px;
     font-style: italic;
   }
 
-  /* PH SCALE */
-  .ph-bar {
-    display: flex;
-    height: 36px;
-    border-radius: 4px;
-    overflow: hidden;
-    margin: 12px 0 4px;
-  }
-  .ph-seg {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    font-weight: 500;
-    color: rgba(0,0,0,0.6);
-  }
-  .ph-nums {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  .ph-nums span {
-    flex: 1;
-    text-align: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-  }
-  .ph-legend {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    font-size: 13px;
+  /* FORMULA CARDS */
+  .formula-card {
+    border: 1px solid var(--border);
+    padding: 20px 24px;
     margin-bottom: 16px;
   }
-  .ph-legend span { display: flex; align-items: center; gap: 6px; }
-  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .formula-card:hover {
+    border-color: var(--accent3);
+  }
 
-  /* CHEAT SHEET */
-  .cheat {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 10px;
-  }
-  .cheat-item {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-top: 3px solid var(--hi);
-    border-radius: 0 0 6px 6px;
-    padding: 12px 14px;
-  }
-  .cheat-item h4 {
+  .formula-label {
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--hi);
-    font-family: 'DM Mono', monospace;
-    margin-bottom: 5px;
+    letter-spacing: 3px;
+    color: var(--accent3);
+    margin-bottom: 10px;
   }
-  .cheat-item p { font-size: 13px; color: var(--muted); }
 
-  /* EQUILIBRIUM TABLE */
-  .eq-table {
+  .formula-box {
+    background: #1a1a1a;
+    border-left: 3px solid var(--accent);
+    padding: 10px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    white-space: pre-wrap;
+  }
+
+  .when-use {
+    font-size: 13px;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .when-use::before { content: '✅  '; }
+
+  .warning {
+    font-size: 13px;
+    color: var(--accent2);
+    margin-top: 4px;
+  }
+  .warning::before { content: '⚠️  '; }
+
+  /* DEFINITION CARD */
+  .def-card {
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .def-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .def-term {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--accent);
+    font-weight: 600;
+    min-width: 60px;
+  }
+  .def-val { color: var(--text); font-size: 14px; }
+
+  /* COLOR TABLE */
+  table {
     width: 100%;
     border-collapse: collapse;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
-    background: var(--paper);
-    margin: 10px 0;
+    margin: 12px 0;
   }
-  .eq-table th {
-    background: var(--re);
-    color: white;
-    padding: 10px 12px;
+  th {
+    border-bottom: 1px solid var(--accent);
+    padding: 8px 12px;
+    text-align: left;
+    color: var(--accent);
     font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: 'DM Mono', monospace;
+    letter-spacing: 2px;
   }
-  .eq-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule); font-size: 13px; }
-  .eq-table td:first-child { font-weight: 600; color: var(--re); }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:last-child td { border-bottom: none; }
 
-  footer {
-    text-align: center;
-    padding: 28px;
-    border-top: 1px solid var(--rule);
-    font-family: 'DM Mono', monospace;
+  .color-red { color: #ff6b6b; }
+  .color-orange { color: #ffa347; }
+  .color-green { color: var(--green); }
+  .color-blue { color: var(--accent2); }
+  .color-violet { color: #c47aff; }
+
+  /* MASTER TABLE */
+  .master-table td:first-child {
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .master-table td:last-child {
+    color: var(--accent);
+    font-size: 12px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 60px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     color: var(--muted);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  /* scroll fade in */
+  .section {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.15s; }
+  .section:nth-child(3) { animation-delay: 0.25s; }
+  .section:nth-child(4) { animation-delay: 0.35s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
   }
 </style>
 </head>
 <body>
+<div class="page">
 
-<header>
-  <div class="header-top">
-    <h1>Unit 7 Exam Study Guide</h1>
-  </div>
-  <div class="sub">Chemistry · Questions 1–27</div>
-  <div class="standards-row">
-    <span class="std-pill std-ss">SS-1 Solutions &amp; Solubility · Q1–8</span>
-    <span class="std-pill std-re">RE-1 Reaction Equilibrium · Q9–18</span>
-    <span class="std-pill std-ab">AB-1 Acids &amp; Bases · Q19–27</span>
-  </div>
-</header>
-
-<nav>
-  <a href="#ss" class="ss">Solutions Q1–8</a>
-  <a href="#re" class="re">Equilibrium Q9–18</a>
-  <a href="#ab" class="ab">Acids &amp; Bases Q19–27</a>
-  <a href="#calc">Calculations</a>
-  <a href="#tips">Exam Tips</a>
-</nav>
-
-<main>
-
-<!-- ===================== SOLUTIONS ===================== -->
-<section id="ss">
-  <div class="sec-label ss">Standard SS-1 · Questions 1–8</div>
-  <h2>Solutions &amp; Solubility</h2>
-
-  <h3>Key Vocabulary (expect definition-style MC)</h3>
-  <div class="def-list">
-    <div class="def-row"><span class="def-term">Solution</span><span class="def-def">A <strong>homogeneous</strong> mixture of two or more substances uniformly distributed.</span></div>
-    <div class="def-row"><span class="def-term">Solute</span><span class="def-def">The substance that <strong>gets dissolved</strong> (usually smaller amount). e.g. KCl in KCl(aq).</span></div>
-    <div class="def-row"><span class="def-term">Solvent</span><span class="def-def">The substance that <strong>does the dissolving</strong> (usually larger amount). e.g. H₂O in KCl(aq).</span></div>
-    <div class="def-row"><span class="def-term">Unsaturated</span><span class="def-def">Solution that has <strong>NOT dissolved all the solute it can</strong> — more can still dissolve.</span></div>
-    <div class="def-row"><span class="def-term">Saturated</span><span class="def-def">Solvent has reached its <strong>maximum capacity</strong> for dissolving solute at that temperature.</span></div>
-    <div class="def-row"><span class="def-term">Supersaturated</span><span class="def-def">Holds <strong>more solute than normally possible</strong> — very unstable. Triggers recrystallization.</span></div>
-    <div class="def-row"><span class="def-term">Soluble</span><span class="def-def">Can be dissolved.</span></div>
-    <div class="def-row"><span class="def-term">Insoluble</span><span class="def-def">Cannot be dissolved.</span></div>
+  <div class="header">
+    <h1>Unit 7 Exam Cheat Sheet<br>Full Version A</h1>
+    <div class="subtitle">Solutions · Equilibrium · Acids & Bases</div>
   </div>
 
-  <div class="alert ss" style="margin-top:18px;">
-    <strong>⚠ Exam Trap — Q1 &amp; Q3 type</strong>
-    In KCl(aq): the <strong>solute is KCl</strong> (what dissolves), the <strong>solvent is H₂O</strong> (what does the dissolving). The (aq) tag means dissolved in water — water is ALWAYS the solvent.
-  </div>
-  <div class="alert ss">
-    <strong>⚠ Exam Trap — Q2 type</strong>
-    All solutions are <strong>homogeneous</strong> mixtures — uniform composition throughout. NOT heterogeneous.
-  </div>
-  <div class="alert ss">
-    <strong>⚠ Exam Trap — Q5 type</strong>
-    MgCl₂(aq) is a solution because of the <strong>(aq)</strong> tag. Mg(s), Cl(g), MgCl₂(s) are pure substances, not solutions.
-  </div>
+  <!-- MCQ -->
+  <div class="section">
+    <div class="section-title">Multiple Choice — Questions &amp; Answers</div>
+    <div class="mcq-grid">
 
-  <h3>Calculations on the Exam (Q6–8 type)</h3>
-  <div class="formula-row">
-    <div class="fc">
-      <div class="fc-name">% by Mass</div>
-      <div class="fc-eq">% = (m_solute / m_solution) × 100</div>
-      <div class="fc-note">m_solution = m_solute + m_solvent</div>
-    </div>
-    <div class="fc">
-      <div class="fc-name">Molarity</div>
-      <div class="fc-eq">M = mol / L</div>
-      <div class="fc-note">Convert g→mol using molar mass. Convert mL→L ÷1000.</div>
-    </div>
-    <div class="fc">
-      <div class="fc-name">Dilution</div>
-      <div class="fc-eq">M₁V₁ = M₂V₂</div>
-      <div class="fc-note">Stock × volume used = final M × final volume</div>
-    </div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q1</div>
+        <div class="q-body">
+          <div class="q-text">Under normal conditions, when a solution has NOT dissolved all the solute it can, it is known as...</div>
+          <div class="q-answer">→ Unsaturated solution</div>
+        </div>
+      </div>
 
-  <div class="wp">
-    <div class="wp-q">Q6 type: 33.0 g KNO₃ dissolved in water → 133 g total solution. % by mass?</div>
-    <div class="wp-steps">% = (33 / 133) × 100</div>
-    <div class="wp-ans">≈ 24.81% by mass</div>
-  </div>
-  <div class="wp">
-    <div class="wp-q">Q7 type: 80.0 g NaNO₃ dissolved → 200.0 mL total solution. Molarity?</div>
-    <div class="wp-steps">Molar mass NaNO₃ = 23+14+3(16) = 85 g/mol
-mol = 80.0 / 85 = 0.941 mol
-M = 0.941 / 0.200 L</div>
-    <div class="wp-ans">≈ 4.7 M</div>
-  </div>
-  <div class="wp">
-    <div class="wp-q">Q8 type: 12.0 M HCl stock → make 500.0 mL of 1.45 M. How much stock needed?</div>
-    <div class="wp-steps">M₁V₁ = M₂V₂
-(12.0)(V₁) = (1.45)(500)
-V₁ = 725 / 12</div>
-    <div class="wp-ans">≈ 60.4 mL of stock solution</div>
-  </div>
-</section>
+      <div class="mcq-card">
+        <div class="q-num">Q2</div>
+        <div class="q-body">
+          <div class="q-text">All solutions can also be defined as _____ mixtures.</div>
+          <div class="q-answer">→ Homogeneous</div>
+        </div>
+      </div>
 
-<!-- ===================== EQUILIBRIUM ===================== -->
-<section id="re">
-  <div class="sec-label re">Standard RE-1 · Questions 9–18</div>
-  <h2>Reaction Equilibrium</h2>
+      <div class="mcq-card">
+        <div class="q-num">Q3</div>
+        <div class="q-body">
+          <div class="q-text">In a solution of KCl(aq), the solute is...</div>
+          <div class="q-answer">→ KCl</div>
+          <div class="q-note">the whole compound, not just K or Cl</div>
+        </div>
+      </div>
 
-  <h3>Core Concepts</h3>
+      <div class="mcq-card">
+        <div class="q-num">Q4</div>
+        <div class="q-body">
+          <div class="q-text">When copper sulfate (CuSO₄) is mixed with water (H₂O), the solvent is...</div>
+          <div class="q-answer">→ H₂O</div>
+          <div class="q-note">solvent = does the dissolving, always the larger amount</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q (exam-style): When a system is at equilibrium, the forward reaction rate must be…</div>
-    <div class="mc-opts">
-      <div class="mc-opt"><span class="letter">a.</span> Less than the reverse reaction</div>
-      <div class="mc-opt"><span class="letter">b.</span> Greater than the reverse reaction</div>
-      <div class="mc-opt correct"><span class="letter">d.</span> Equal to the reverse reaction</div>
-    </div>
-    <div class="why">At equilibrium, forward rate = reverse rate. Concentrations stay constant but reactions are still happening.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q5</div>
+        <div class="q-body">
+          <div class="q-text">Which of the following samples is denoted as being a solution?</div>
+          <div class="q-answer">→ MgCl₂ (aq)</div>
+          <div class="q-note">aq = aqueous = dissolved in water = solution</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q: Which symbol denotes a reversible reaction?</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">d.</span> ⇄ (double arrow)</div>
-      <div class="mc-opt"><span class="letter">a.</span> = (equals)</div>
-      <div class="mc-opt"><span class="letter">b.</span> → (single arrow)</div>
-    </div>
-    <div class="why">Single arrow → means one direction only. Double arrow ⇄ means the reaction goes both ways.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q9</div>
+        <div class="q-body">
+          <div class="q-text">Nitrogen dioxide (NO₂) combines to form N₂O₄ at equilibrium. The rate of the forward reaction must be...</div>
+          <div class="q-answer">→ Equal to the reverse reaction</div>
+          <div class="q-note">at equilibrium forward rate ALWAYS equals reverse rate</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q11: At equilibrium, concentrations of reactants and products will always be…</div>
-    <div class="mc-opts">
-      <div class="mc-opt"><span class="letter">b.</span> Equal</div>
-      <div class="mc-opt"><span class="letter">c.</span> Changing</div>
-      <div class="mc-opt correct"><span class="letter">d.</span> Constant</div>
-    </div>
-    <div class="why">Constant ≠ equal. They stay steady but reactants and products can have very different concentrations.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q10</div>
+        <div class="q-body">
+          <div class="q-text">Which symbol denotes a reaction as being reversible?</div>
+          <div class="q-answer">→ ⇌</div>
+          <div class="q-note">double arrow = reversible</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q12: All chemical equilibrium systems are described as…</div>
-    <div class="mc-opts">
-      <div class="mc-opt"><span class="letter">a.</span> Static</div>
-      <div class="mc-opt correct"><span class="letter">d.</span> Dynamic</div>
-    </div>
-    <div class="why">Dynamic = both reactions still occurring simultaneously. Static would mean nothing is moving — that's wrong.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q11</div>
+        <div class="q-body">
+          <div class="q-text">When a system has reached equilibrium, the concentration of reactants and products will always be...</div>
+          <div class="q-answer">→ Constant</div>
+          <div class="q-note">not equal to each other, not zero, just not changing</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q13 (Le Chatelier): When equilibrium is disturbed, the system…</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">d.</span> Temporarily loses equilibrium but finds a new equilibrium</div>
-      <div class="mc-opt"><span class="letter">b.</span> Stays at the original equilibrium</div>
-    </div>
-    <div class="why">Le Chatelier's Principle: the system shifts to OPPOSE the change and reach a NEW equilibrium.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q12</div>
+        <div class="q-body">
+          <div class="q-text">All chemical equilibrium systems are described as being...</div>
+          <div class="q-answer">→ Dynamic</div>
+          <div class="q-note">both reactions still happening, just at equal rates</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q14: A reaction at equilibrium — which is INCORRECT?</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">a.</span> The reaction has completely stopped ← INCORRECT</div>
-      <div class="mc-opt"><span class="letter">b.</span> Products are continuously being formed ✓</div>
-      <div class="mc-opt"><span class="letter">c.</span> Rate forward = rate reverse ✓</div>
-      <div class="mc-opt"><span class="letter">d.</span> Concentrations remain constant ✓</div>
-    </div>
-    <div class="why">Equilibrium is DYNAMIC — reactions never stop, they just balance out.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q13</div>
+        <div class="q-body">
+          <div class="q-text">According to Le Chatelier's principle, when a system at equilibrium is disturbed...</div>
+          <div class="q-answer">→ The system will temporarily lose equilibrium but find a new equilibrium</div>
+        </div>
+      </div>
 
-  <h3>Le Chatelier's Principle — Shift Rules</h3>
-  <table class="eq-table">
-    <thead><tr><th>What changes</th><th>System response</th><th>Shift direction</th></tr></thead>
-    <tbody>
-      <tr><td>Add reactant</td><td>Uses up extra reactant</td><td>→ Forward (more products)</td></tr>
-      <tr><td>Remove reactant</td><td>Makes more reactant</td><td>← Reverse</td></tr>
-      <tr><td>Add product</td><td>Uses up extra product</td><td>← Reverse</td></tr>
-      <tr><td>Remove product</td><td>Makes more product</td><td>→ Forward</td></tr>
-    </tbody>
-  </table>
+      <div class="mcq-card">
+        <div class="q-num">Q14</div>
+        <div class="q-body">
+          <div class="q-text">A reaction is at equilibrium. Which statement is INCORRECT?</div>
+          <div class="q-answer">→ "The reaction has completely stopped"</div>
+          <div class="q-note">reactions never stop at equilibrium, they're dynamic</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q17: X + YZ ⇄ Y + XZ. YZ is added. Which occurs?</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">d.</span> The forward reaction rate increases</div>
-    </div>
-    <div class="why">Adding a reactant (YZ) shifts the reaction forward → more products form → forward rate increases.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q15</div>
+        <div class="q-body">
+          <div class="q-text">According to the graph, at which point does the reaction first reach equilibrium?</div>
+          <div class="q-answer">→ T3</div>
+          <div class="q-note">where the concentration lines become flat</div>
+        </div>
+      </div>
 
-  <div class="mc">
-    <div class="mc-q">Q18: X + YZ ⇄ Y + XZ. Some X is removed. Which occurs?</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">a.</span> The reverse reaction rate would increase</div>
-    </div>
-    <div class="why">Removing reactant X → system shifts REVERSE to make more X → reverse rate increases.</div>
-  </div>
+      <div class="mcq-card">
+        <div class="q-num">Q16</div>
+        <div class="q-body">
+          <div class="q-text">Which statement about the reaction at equilibrium is true?</div>
+          <div class="q-answer">→ Reactants are favored</div>
+          <div class="q-note">reactant line is higher than product line on graph</div>
+        </div>
+      </div>
 
-  <h3>Reading Equilibrium Graphs</h3>
-  <div class="alert re">
-    <strong>Graph Questions (Q15–16 type)</strong>
-    On a concentration vs. time graph: equilibrium is reached when the lines flatten out and become horizontal. The reaction that starts HIGH and ends LOW is the <strong>reactant</strong>. The one that starts LOW and rises is the <strong>product</strong>. If products level off HIGHER than reactants → products are favored.
-  </div>
-</section>
+      <div class="mcq-card">
+        <div class="q-num">Q17</div>
+        <div class="q-body">
+          <div class="q-text">If additional YZ is added to X + YZ ⇌ Y + XZ at equilibrium...</div>
+          <div class="q-answer">→ The forward reaction rate would increase</div>
+          <div class="q-note">adding reactant pushes reaction forward</div>
+        </div>
+      </div>
 
-<!-- ===================== ACIDS & BASES ===================== -->
-<section id="ab">
-  <div class="sec-label ab">Standard AB-1 · Questions 19–27</div>
-  <h2>Acids &amp; Bases</h2>
+      <div class="mcq-card">
+        <div class="q-num">Q18</div>
+        <div class="q-body">
+          <div class="q-text">If some X is removed from X + YZ ⇌ Y + XZ at equilibrium...</div>
+          <div class="q-answer">→ The reverse reaction rate would increase</div>
+          <div class="q-note">removing reactant pulls reaction backward</div>
+        </div>
+      </div>
 
-  <h3>Arrhenius Definitions</h3>
-  <div class="def-list">
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Arrhenius Acid</span><span class="def-def">Releases <strong>H⁺ ions</strong> in water. (e.g. HCl → H⁺ + Cl⁻)</span></div>
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Arrhenius Base</span><span class="def-def">Releases <strong>OH⁻ ions</strong> in water. (e.g. NaOH → Na⁺ + OH⁻)</span></div>
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Strong Acid/Base</span><span class="def-def"><strong>Nearly 100% ionize</strong> in solution. (HCl, HBr, HI, NaOH, KOH)</span></div>
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Weak Acid/Base</span><span class="def-def"><strong>Partially ionize</strong> — less than 100%. (HF, CH₃COOH/acetic acid)</span></div>
-  </div>
-
-  <div class="mc" style="margin-top:16px;">
-    <div class="mc-q">Q19: According to Arrhenius theory, a substance that yields OH⁻ ions in solution is a…</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">c.</span> Base</div>
     </div>
   </div>
 
-  <h3>The pH Scale</h3>
-  <div class="ph-bar">
-    <div class="ph-seg" style="background:#d32f2f; flex:3;">ACID</div>
-    <div class="ph-seg" style="background:#f57c00; flex:2;"></div>
-    <div class="ph-seg" style="background:#fbc02d; flex:2;"></div>
-    <div class="ph-seg" style="background:#aed581; flex:1;">7</div>
-    <div class="ph-seg" style="background:#66bb6a; flex:2;"></div>
-    <div class="ph-seg" style="background:#26a69a; flex:2;"></div>
-    <div class="ph-seg" style="background:#1565c0; color:white; flex:3;">BASE</div>
-  </div>
-  <div class="ph-nums">
-    <span style="flex:3; text-align:left; padding-left:4px;">0</span>
-    <span style="flex:1; text-align:center;">7</span>
-    <span style="flex:3; text-align:right; padding-right:4px;">14</span>
-  </div>
-  <div class="ph-legend">
-    <span><span class="dot" style="background:#d32f2f;"></span> pH &lt; 7 → Acid (more H⁺)</span>
-    <span><span class="dot" style="background:#aed581;"></span> pH = 7 → Neutral (H⁺ = OH⁻)</span>
-    <span><span class="dot" style="background:#1565c0;"></span> pH &gt; 7 → Base (more OH⁻)</span>
+  <!-- CALCULATION QUESTIONS -->
+  <div class="section">
+    <div class="section-title">Calculation Questions — Formula + When To Use It</div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q6 — % by Mass</div>
+      <div class="formula-box">% = (mass of solute / mass of solution) × 100</div>
+      <div class="when-use">Use when: given grams of solute and grams of solvent/solution, asked for percentage concentration</div>
+      <div class="warning">Mass of solution = mass of solute + mass of solvent</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q7 — Molarity</div>
+      <div class="formula-box">M = moles / liters</div>
+      <div class="when-use">Use when: given grams of a substance dissolved into a volume of solution</div>
+      <div class="warning">Always convert grams → moles using molar mass first, and mL → L</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q8 — Dilution</div>
+      <div class="formula-box">M₁V₁ = M₂V₂</div>
+      <div class="when-use">Use when: you have a concentrated stock solution and need to make a less concentrated one</div>
+      <div class="warning">You'll be given 3 of the 4 values, solve for the missing one</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q19 — Arrhenius Definition</div>
+      <div class="formula-box">No formula — pure definition</div>
+      <div class="def-item"><span class="def-term">Acid</span><span class="def-val">= produces H⁺ in water</span></div>
+      <div class="def-item"><span class="def-term">Base</span><span class="def-val">= produces OH⁻ in water</span></div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q20 — Universal Indicator</div>
+      <div class="formula-box">No formula — memorize the color chart</div>
+      <table>
+        <tr><th>Color</th><th>pH Range</th></tr>
+        <tr><td class="color-red">Red</td><td>1–4</td></tr>
+        <tr><td class="color-orange">Orange</td><td>5–6</td></tr>
+        <tr><td class="color-green">Green</td><td>6–7</td></tr>
+        <tr><td class="color-blue">Blue</td><td>8–10</td></tr>
+        <tr><td class="color-violet">Violet</td><td>11–14</td></tr>
+      </table>
+      <div class="when-use">Use when: asked what color you'd see for an acid or base</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q21 — Weak vs Strong Acid</div>
+      <div class="formula-box">No formula — conceptual</div>
+      <div class="when-use">Use when: comparing pH of weak vs strong acid at same concentration</div>
+      <div class="warning">Weak acid = less ionization = fewer H⁺ ions = HIGHER pH than strong acid</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q22 — pH of HOCl (weak acid)</div>
+      <div class="formula-box">pH = −log[H⁺]
+pOH = −log[OH⁻]
+pH + pOH = 14</div>
+      <div class="when-use">Use when: given molarity of an acid, asked for pH</div>
+      <div class="warning">For STRONG acids → molarity = [H⁺] directly</div>
+      <div class="warning">For WEAK acids → pH will be higher than −log(molarity)</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q23 — pH of KOH (base)</div>
+      <div class="formula-box">pOH = −log[OH⁻]
+pH = 14 − pOH</div>
+      <div class="when-use">Use when: given molarity of a BASE, asked for pH</div>
+      <div class="warning">For strong bases → molarity = [OH⁻] → find pOH first → then subtract from 14</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q24 — Concentration of HBr from pH</div>
+      <div class="formula-box">[H⁺] = 10^(−pH)</div>
+      <div class="when-use">Use when: given a pH and asked for the molarity of a STRONG ACID</div>
+      <div class="warning">Since HBr is a strong acid → molarity = [H⁺] = 10^(−pH)</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q25 — Concentration of NaOH from pH</div>
+      <div class="formula-box">pOH = 14 − pH
+[OH⁻] = 10^(−pOH)</div>
+      <div class="when-use">Use when: given a pH and asked for the molarity of a STRONG BASE</div>
+      <div class="warning">Convert pH → pOH first, then find [OH⁻]</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q26 — Titration (finding unknown concentration)</div>
+      <div class="formula-box">M₁V₁ = M₂V₂</div>
+      <div class="when-use">Use when: given volume and molarity of one solution + volume of another solution, asked for the unknown molarity</div>
+      <div class="warning">Same formula as dilution! The difference is context — here you're neutralizing acid with base</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q27 — Titration Lab (buret reading)</div>
+      <div class="formula-box">Total Volume = Final reading − Initial reading
+Then → M₁V₁ = M₂V₂</div>
+      <div class="when-use">Use when: given buret readings and one concentration, asked to find concentration of the other solution</div>
+      <div class="warning">Step 1 always: subtract buret readings to get actual volume used</div>
+      <div class="warning">Step 2: plug into M₁V₁ = M₂V₂ and solve</div>
+    </div>
+
   </div>
 
-  <div class="mc">
-    <div class="mc-q">Q20 (Indicator): A basic substance tested with universal indicator would appear…</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">a.</span> Blue (pH 8–10 range on the indicator chart)</div>
-    </div>
-    <div class="why">Indicator color chart: Red=1–4, Orange=5–6, Green=6–7, Blue=8–10, Violet=11–14. Basic = pH &gt; 7, so Blue or Violet.</div>
+  <!-- MASTER TABLE -->
+  <div class="section">
+    <div class="section-title">Master Formula Decision Chart</div>
+    <table class="master-table">
+      <tr><th>What are you given?</th><th>What do you use?</th></tr>
+      <tr><td>Grams of solute + grams of solution</td><td>% by mass formula</td></tr>
+      <tr><td>Grams of solute + volume of solution</td><td>Molarity formula</td></tr>
+      <tr><td>Two concentrations, need a volume</td><td>M₁V₁ = M₂V₂</td></tr>
+      <tr><td>Molarity of an acid</td><td>pH = −log[H⁺]</td></tr>
+      <tr><td>Molarity of a base</td><td>pOH = −log[OH⁻] then pH = 14 − pOH</td></tr>
+      <tr><td>pH of an acid, need molarity</td><td>[H⁺] = 10^(−pH)</td></tr>
+      <tr><td>pH of a base, need molarity</td><td>pOH = 14 − pH then [OH⁻] = 10^(−pOH)</td></tr>
+      <tr><td>Buret readings + one concentration</td><td>Subtract readings first, then M₁V₁ = M₂V₂</td></tr>
+    </table>
   </div>
 
-  <div class="mc">
-    <div class="mc-q">Q21: Strong acid HCl at 0.1 M → pH 1.00. Weak acid HF at same concentration would have pH…</div>
-    <div class="mc-opts">
-      <div class="mc-opt correct"><span class="letter">d.</span> Greater than 1.00 (weak acids have less % ionization)</div>
-    </div>
-    <div class="why">Weak acids don't fully ionize → fewer H⁺ ions → higher pH than an equal-concentration strong acid.</div>
-  </div>
+  <div class="footer">Unit 7 · Version A · Solutions · Equilibrium · Acids &amp; Bases</div>
 
-  <h3>pH Calculation Formulas (Q22–25 type)</h3>
-  <div class="formula-row">
-    <div class="fc">
-      <div class="fc-name">pH (for acids)</div>
-      <div class="fc-eq">pH = -log[H⁺]</div>
-      <div class="fc-note">For strong acids: [H⁺] = molarity</div>
-    </div>
-    <div class="fc">
-      <div class="fc-name">pOH (for bases)</div>
-      <div class="fc-eq">pOH = -log[OH⁻]</div>
-      <div class="fc-note">For strong bases: [OH⁻] = molarity</div>
-    </div>
-    <div class="fc">
-      <div class="fc-name">pH + pOH</div>
-      <div class="fc-eq">pH + pOH = 14</div>
-      <div class="fc-note">Always at 25°C</div>
-    </div>
-    <div class="fc">
-      <div class="fc-name">Kw</div>
-      <div class="fc-eq">[H⁺][OH⁻] = 1×10⁻¹⁴</div>
-      <div class="fc-note">Divide to find the other ion</div>
-    </div>
-    <div class="fc">
-      <div class="fc-name">Find [H⁺] from pH</div>
-      <div class="fc-eq">[H⁺] = 10^(−pH)</div>
-      <div class="fc-note">Also: [OH⁻] = 10^(−pOH)</div>
-    </div>
-  </div>
-
-  <div class="wp">
-    <div class="wp-q">Q22 type: pH of HOCl at 0.50 M concentration?</div>
-    <div class="wp-steps">HOCl is an acid → [H⁺] = 0.50 M
-pH = -log(0.50)</div>
-    <div class="wp-ans">pH = 0.30</div>
-  </div>
-
-  <div class="wp">
-    <div class="wp-q">Q23 type: pH of 0.70 M KOH?</div>
-    <div class="wp-steps">KOH is a base → [OH⁻] = 0.70 M
-pOH = -log(0.70) = 0.15
-pH = 14 - 0.15</div>
-    <div class="wp-ans">pH = 13.85</div>
-  </div>
-
-  <div class="wp">
-    <div class="wp-q">Q24 type: Find [H⁺] and [OH⁻] for HBr solution with pH = 1.35</div>
-    <div class="wp-steps">[H⁺] = 10^(-1.35) = 0.04 M
-[OH⁻] = 1×10⁻¹⁴ / 0.04 = 2.5×10⁻¹³</div>
-    <div class="wp-ans">[H⁺] = 0.04 M, pOH = 12.65</div>
-  </div>
-
-  <div class="wp">
-    <div class="wp-q">Q25 type: NaOH solution with pH 12.35 — find [OH⁻]</div>
-    <div class="wp-steps">pOH = 14 - 12.35 = 1.65
-[OH⁻] = 10^(-1.65)</div>
-    <div class="wp-ans">[OH⁻] ≈ 0.022 M</div>
-  </div>
-
-  <h3>Titrations (Q26–27)</h3>
-  <div class="def-list">
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Neutralization</span><span class="def-def">Acid + Base → Water + Salt. Equal moles of H⁺ and OH⁻ react.</span></div>
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Indicator</span><span class="def-def">Changes color at the endpoint to show the titration is complete.</span></div>
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Equivalence Point</span><span class="def-def">Moles of acid = Moles of base. Reaction is fully neutralized.</span></div>
-    <div class="def-row"><span class="def-term" style="color:var(--ab)">Endpoint</span><span class="def-def">Visible color change of indicator — used to identify the equivalence point.</span></div>
-  </div>
-
-  <div class="wp" style="margin-top:16px;">
-    <div class="wp-q">Q26 type: 22.3 mL of HCl reaches endpoint with 18.3 mL of 0.30 M NaOH. Find [HCl].</div>
-    <div class="wp-steps">Step 1: mol NaOH = 0.30 M × 0.0183 L = 0.00549 mol
-Step 2: mol HCl = mol NaOH = 0.00549 mol  (1:1)
-Step 3: M HCl = 0.00549 / 0.0223 L</div>
-    <div class="wp-ans">≈ 0.246 M HCl</div>
-  </div>
-
-  <div class="wp">
-    <div class="wp-q">Q27 type (buret problem): Initial KOH = 3.35 mL, Final = 29.55 mL. Find vol used, then find [CH₃COOH] if KOH is 0.15 M and acetic acid sample was 35 mL.</div>
-    <div class="wp-steps">Vol KOH used = 29.55 - 3.35 = 26.2 mL = 0.0262 L
-mol KOH = 0.15 × 0.0262 = 0.00393 mol
-M acetic = 0.00393 / 0.035 L</div>
-    <div class="wp-ans">≈ 0.112 M CH₃COOH</div>
-  </div>
-
-  <div class="alert ab">
-    <strong>⚠ Buret Reading Tip (Q27)</strong>
-    Burets read from TOP to BOTTOM (0 is at top, 50 at bottom). Volume USED = Final reading − Initial reading. Always subtract to get the total volume added.
-  </div>
-</section>
-
-<!-- ===================== CALC REFERENCE ===================== -->
-<section id="calc">
-  <div class="sec-label" style="color:var(--hi)">Quick Reference</div>
-  <h2>Calculation Cheat Sheet</h2>
-  <table>
-    <thead><tr><th>Calculation Type</th><th>Formula</th><th>Key Step</th></tr></thead>
-    <tbody>
-      <tr><td>% by mass</td><td class="ans">(m_solute / m_solution) × 100</td><td>Add solute + solvent = solution mass first</td></tr>
-      <tr><td>Molarity</td><td class="ans">M = mol / L</td><td>g ÷ molar mass = mol; mL ÷ 1000 = L</td></tr>
-      <tr><td>Dilution</td><td class="ans">M₁V₁ = M₂V₂</td><td>Units of V must match on both sides</td></tr>
-      <tr><td>pH (acid)</td><td class="ans">-log[H⁺]</td><td>[H⁺] = molarity for strong acids</td></tr>
-      <tr><td>pOH (base)</td><td class="ans">-log[OH⁻]</td><td>[OH⁻] = molarity for strong bases</td></tr>
-      <tr><td>pH from pOH</td><td class="ans">pH = 14 - pOH</td><td>Always works at 25°C</td></tr>
-      <tr><td>[H⁺] from pH</td><td class="ans">[H⁺] = 10^(-pH)</td><td>Enter as 10^(−pH) on calculator</td></tr>
-      <tr><td>Titration</td><td class="ans">mol = M × V(L)</td><td>mol acid = mol base at equivalence</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- ===================== TIPS ===================== -->
-<section id="tips">
-  <div class="sec-label" style="color:var(--hi)">Don't Lose Easy Points</div>
-  <h2>Exam Tips</h2>
-  <div class="cheat">
-    <div class="cheat-item">
-      <h4>Solute vs Solvent</h4>
-      <p>In KCl(aq): KCl = solute, H₂O = solvent. (aq) always means water is the solvent.</p>
-    </div>
-    <div class="cheat-item">
-      <h4>Homogeneous</h4>
-      <p>All solutions are homogeneous mixtures — uniform throughout. Never heterogeneous.</p>
-    </div>
-    <div class="cheat-item">
-      <h4>Constant ≠ Equal</h4>
-      <p>At equilibrium, concentrations are CONSTANT — but reactants and products don't have to be equal amounts.</p>
-    </div>
-    <div class="cheat-item">
-      <h4>Dynamic, Not Static</h4>
-      <p>Equilibrium is dynamic — reactions still occur in both directions, they just balance out.</p>
-    </div>
-    <div class="cheat-item">
-      <h4>Weak Acid pH</h4>
-      <p>Weak acid at same concentration as strong acid → HIGHER pH (less H⁺ because less ionization).</p>
-    </div>
-    <div class="cheat-item">
-      <h4>Base pH Strategy</h4>
-      <p>Never plug [OH⁻] into -log for pH directly. Get pOH first, then pH = 14 - pOH.</p>
-    </div>
-    <div class="cheat-item">
-      <h4>Buret Readings</h4>
-      <p>0 is at the TOP of a buret. Volume used = Final − Initial reading.</p>
-    </div>
-    <div class="cheat-item">
-      <h4>mL → L</h4>
-      <p>Divide by 1000. ALWAYS convert before using any molarity formula.</p>
-    </div>
-    <div class="cheat-item">
-      <h4>Le Chatelier Direction</h4>
-      <p>Add something → system shifts AWAY from it. Remove something → system shifts TOWARD it.</p>
-    </div>
-  </div>
-</section>
-
-</main>
-<footer>Unit 7 Exam Study Guide · Solutions · Equilibrium · Acids &amp; Bases · Q1–27</footer>
+</div>
 </body>
 </html>
-
