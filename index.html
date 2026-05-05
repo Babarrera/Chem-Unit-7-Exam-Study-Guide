@@ -34,7 +34,6 @@
     margin: 0 auto;
   }
 
-  /* HEADER */
   .header {
     border: 1px solid var(--accent);
     padding: 32px;
@@ -69,9 +68,22 @@
     margin-top: 8px;
   }
 
-  /* SECTIONS */
   .section {
     margin-bottom: 48px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: fadeUp 0.5s ease forwards;
+  }
+  .section:nth-child(1) { animation-delay: 0.05s; }
+  .section:nth-child(2) { animation-delay: 0.1s; }
+  .section:nth-child(3) { animation-delay: 0.15s; }
+  .section:nth-child(4) { animation-delay: 0.2s; }
+  .section:nth-child(5) { animation-delay: 0.25s; }
+  .section:nth-child(6) { animation-delay: 0.3s; }
+  .section:nth-child(7) { animation-delay: 0.35s; }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .section-title {
@@ -85,11 +97,7 @@
     margin-bottom: 24px;
   }
 
-  /* MCQ CARDS */
-  .mcq-grid {
-    display: grid;
-    gap: 12px;
-  }
+  .mcq-grid { display: grid; gap: 12px; }
 
   .mcq-card {
     border: 1px solid var(--border);
@@ -100,9 +108,7 @@
     align-items: start;
     transition: border-color 0.2s;
   }
-  .mcq-card:hover {
-    border-color: var(--accent2);
-  }
+  .mcq-card:hover { border-color: var(--accent2); }
 
   .q-num {
     font-family: 'IBM Plex Mono', monospace;
@@ -113,34 +119,22 @@
     padding-top: 2px;
   }
 
-  .q-body {}
-  .q-text {
-    color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 6px;
-  }
+  .q-text { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
   .q-answer {
     color: var(--accent);
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
     font-size: 14px;
   }
-  .q-note {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 4px;
-    font-style: italic;
-  }
+  .q-note { font-size: 12px; color: var(--muted); margin-top: 4px; font-style: italic; }
 
-  /* FORMULA CARDS */
   .formula-card {
     border: 1px solid var(--border);
     padding: 20px 24px;
     margin-bottom: 16px;
+    transition: border-color 0.2s;
   }
-  .formula-card:hover {
-    border-color: var(--accent3);
-  }
+  .formula-card:hover { border-color: var(--accent3); }
 
   .formula-label {
     font-family: 'IBM Plex Mono', monospace;
@@ -161,60 +155,18 @@
     white-space: pre-wrap;
   }
 
-  .when-use {
-    font-size: 13px;
-    color: var(--green);
-    margin-bottom: 6px;
-  }
+  .when-use { font-size: 13px; color: var(--green); margin-bottom: 6px; }
   .when-use::before { content: '✅  '; }
-
-  .warning {
-    font-size: 13px;
-    color: var(--accent2);
-    margin-top: 4px;
-  }
+  .warning { font-size: 13px; color: var(--accent2); margin-top: 4px; }
   .warning::before { content: '⚠️  '; }
 
-  /* DEFINITION CARD */
-  .def-card {
-    border: 1px solid var(--border);
-    padding: 20px 24px;
-    margin-bottom: 16px;
-  }
-
-  .def-item {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 8px;
-  }
-  .def-term {
-    font-family: 'IBM Plex Mono', monospace;
-    color: var(--accent);
-    font-weight: 600;
-    min-width: 60px;
-  }
+  .def-item { display: flex; gap: 12px; margin-bottom: 8px; }
+  .def-term { font-family: 'IBM Plex Mono', monospace; color: var(--accent); font-weight: 600; min-width: 60px; }
   .def-val { color: var(--text); font-size: 14px; }
 
-  /* COLOR TABLE */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    margin: 12px 0;
-  }
-  th {
-    border-bottom: 1px solid var(--accent);
-    padding: 8px 12px;
-    text-align: left;
-    color: var(--accent);
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-  td {
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border);
-  }
+  table { width: 100%; border-collapse: collapse; font-family: 'IBM Plex Mono', monospace; font-size: 13px; margin: 12px 0; }
+  th { border-bottom: 1px solid var(--accent); padding: 8px 12px; text-align: left; color: var(--accent); font-size: 11px; letter-spacing: 2px; }
+  td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
   tr:last-child td { border-bottom: none; }
 
   .color-red { color: #ff6b6b; }
@@ -223,17 +175,9 @@
   .color-blue { color: var(--accent2); }
   .color-violet { color: #c47aff; }
 
-  /* MASTER TABLE */
-  .master-table td:first-child {
-    color: var(--muted);
-    font-size: 12px;
-  }
-  .master-table td:last-child {
-    color: var(--accent);
-    font-size: 12px;
-  }
+  .master-table td:first-child { color: var(--muted); font-size: 12px; }
+  .master-table td:last-child { color: var(--accent); font-size: 12px; }
 
-  /* FOOTER */
   .footer {
     margin-top: 60px;
     border-top: 1px solid var(--border);
@@ -243,21 +187,6 @@
     color: var(--muted);
     letter-spacing: 2px;
     text-align: center;
-  }
-
-  /* scroll fade in */
-  .section {
-    opacity: 0;
-    transform: translateY(16px);
-    animation: fadeUp 0.5s ease forwards;
-  }
-  .section:nth-child(1) { animation-delay: 0.05s; }
-  .section:nth-child(2) { animation-delay: 0.15s; }
-  .section:nth-child(3) { animation-delay: 0.25s; }
-  .section:nth-child(4) { animation-delay: 0.35s; }
-
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
   }
 </style>
 </head>
@@ -269,9 +198,9 @@
     <div class="subtitle">Solutions · Equilibrium · Acids & Bases</div>
   </div>
 
-  <!-- MCQ -->
+  <!-- Q1–Q5 MCQ SS-1 -->
   <div class="section">
-    <div class="section-title">Multiple Choice — Questions &amp; Answers</div>
+    <div class="section-title">Solutions & Solubility — MCQ (Q1–Q5)</div>
     <div class="mcq-grid">
 
       <div class="mcq-card">
@@ -316,6 +245,41 @@
           <div class="q-note">aq = aqueous = dissolved in water = solution</div>
         </div>
       </div>
+
+    </div>
+  </div>
+
+  <!-- Q6–Q8 CALCULATIONS SS-1 -->
+  <div class="section">
+    <div class="section-title">Solutions & Solubility — Calculations (Q6–Q8)</div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q6 — % by Mass</div>
+      <div class="formula-box">% = (mass of solute / mass of solution) × 100</div>
+      <div class="when-use">Use when: given grams of solute and grams of solvent/solution, asked for percentage concentration</div>
+      <div class="warning">Mass of solution = mass of solute + mass of solvent</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q7 — Molarity</div>
+      <div class="formula-box">M = moles / liters</div>
+      <div class="when-use">Use when: given grams of a substance dissolved into a volume of solution</div>
+      <div class="warning">Always convert grams → moles using molar mass first, and mL → L</div>
+    </div>
+
+    <div class="formula-card">
+      <div class="formula-label">Q8 — Dilution</div>
+      <div class="formula-box">M₁V₁ = M₂V₂</div>
+      <div class="when-use">Use when: you have a concentrated stock solution and need to make a less concentrated one</div>
+      <div class="warning">You'll be given 3 of the 4 values, solve for the missing one</div>
+    </div>
+
+  </div>
+
+  <!-- Q9–Q18 MCQ RE-1 -->
+  <div class="section">
+    <div class="section-title">Reaction Equilibrium — MCQ (Q9–Q18)</div>
+    <div class="mcq-grid">
 
       <div class="mcq-card">
         <div class="q-num">Q9</div>
@@ -409,58 +373,52 @@
     </div>
   </div>
 
-  <!-- CALCULATION QUESTIONS -->
+  <!-- Q19–Q21 MCQ AB-1 -->
   <div class="section">
-    <div class="section-title">Calculation Questions — Formula + When To Use It</div>
+    <div class="section-title">Acids & Bases — MCQ (Q19–Q21)</div>
+    <div class="mcq-grid">
 
-    <div class="formula-card">
-      <div class="formula-label">Q6 — % by Mass</div>
-      <div class="formula-box">% = (mass of solute / mass of solution) × 100</div>
-      <div class="when-use">Use when: given grams of solute and grams of solvent/solution, asked for percentage concentration</div>
-      <div class="warning">Mass of solution = mass of solute + mass of solvent</div>
-    </div>
+      <div class="mcq-card">
+        <div class="q-num">Q19</div>
+        <div class="q-body">
+          <div class="q-text">According to the Arrhenius theory, a substance that yields hydroxide (OH⁻) ions when forming an aqueous solution is known as a(n)...</div>
+          <div class="q-answer">→ Base</div>
+          <div class="q-note">Acid = yields H⁺ | Base = yields OH⁻</div>
+        </div>
+      </div>
 
-    <div class="formula-card">
-      <div class="formula-label">Q7 — Molarity</div>
-      <div class="formula-box">M = moles / liters</div>
-      <div class="when-use">Use when: given grams of a substance dissolved into a volume of solution</div>
-      <div class="warning">Always convert grams → moles using molar mass first, and mL → L</div>
-    </div>
+      <div class="mcq-card">
+        <div class="q-num">Q20</div>
+        <div class="q-body">
+          <div class="q-text">When testing a substance that is basic, the universal indicator color the student might see is...</div>
+          <div class="q-answer">→ Blue</div>
+          <div class="q-note">Basic = pH 8–10 = Blue, or pH 11–14 = Violet</div>
+          <table>
+            <tr><th>Color</th><th>pH Range</th></tr>
+            <tr><td class="color-red">Red</td><td>1–4</td></tr>
+            <tr><td class="color-orange">Orange</td><td>5–6</td></tr>
+            <tr><td class="color-green">Green</td><td>6–7</td></tr>
+            <tr><td class="color-blue">Blue</td><td>8–10</td></tr>
+            <tr><td class="color-violet">Violet</td><td>11–14</td></tr>
+          </table>
+        </div>
+      </div>
 
-    <div class="formula-card">
-      <div class="formula-label">Q8 — Dilution</div>
-      <div class="formula-box">M₁V₁ = M₂V₂</div>
-      <div class="when-use">Use when: you have a concentrated stock solution and need to make a less concentrated one</div>
-      <div class="warning">You'll be given 3 of the 4 values, solve for the missing one</div>
-    </div>
+      <div class="mcq-card">
+        <div class="q-num">Q21</div>
+        <div class="q-body">
+          <div class="q-text">A strong acid HCl has a pH of exactly 1.00 at 0.1 M. When testing the weak acid HF at the same concentration, the pH should be...</div>
+          <div class="q-answer">→ Greater than 1.00 but less than 7.00 because weak acids have less % ionization</div>
+          <div class="q-note">Weak acid = less ionization = fewer H⁺ ions = HIGHER pH than strong acid</div>
+        </div>
+      </div>
 
-    <div class="formula-card">
-      <div class="formula-label">Q19 — Arrhenius Definition</div>
-      <div class="formula-box">No formula — pure definition</div>
-      <div class="def-item"><span class="def-term">Acid</span><span class="def-val">= produces H⁺ in water</span></div>
-      <div class="def-item"><span class="def-term">Base</span><span class="def-val">= produces OH⁻ in water</span></div>
     </div>
+  </div>
 
-    <div class="formula-card">
-      <div class="formula-label">Q20 — Universal Indicator</div>
-      <div class="formula-box">No formula — memorize the color chart</div>
-      <table>
-        <tr><th>Color</th><th>pH Range</th></tr>
-        <tr><td class="color-red">Red</td><td>1–4</td></tr>
-        <tr><td class="color-orange">Orange</td><td>5–6</td></tr>
-        <tr><td class="color-green">Green</td><td>6–7</td></tr>
-        <tr><td class="color-blue">Blue</td><td>8–10</td></tr>
-        <tr><td class="color-violet">Violet</td><td>11–14</td></tr>
-      </table>
-      <div class="when-use">Use when: asked what color you'd see for an acid or base</div>
-    </div>
-
-    <div class="formula-card">
-      <div class="formula-label">Q21 — Weak vs Strong Acid</div>
-      <div class="formula-box">No formula — conceptual</div>
-      <div class="when-use">Use when: comparing pH of weak vs strong acid at same concentration</div>
-      <div class="warning">Weak acid = less ionization = fewer H⁺ ions = HIGHER pH than strong acid</div>
-    </div>
+  <!-- Q22–Q27 CALCULATIONS AB-1 -->
+  <div class="section">
+    <div class="section-title">Acids & Bases — Calculations (Q22–Q27)</div>
 
     <div class="formula-card">
       <div class="formula-label">Q22 — pH of HOCl (weak acid)</div>
@@ -498,7 +456,7 @@ pH = 14 − pOH</div>
     <div class="formula-card">
       <div class="formula-label">Q26 — Titration (finding unknown concentration)</div>
       <div class="formula-box">M₁V₁ = M₂V₂</div>
-      <div class="when-use">Use when: given volume and molarity of one solution + volume of another solution, asked for the unknown molarity</div>
+      <div class="when-use">Use when: given volume and molarity of one solution + volume of another, asked for the unknown molarity</div>
       <div class="warning">Same formula as dilution! The difference is context — here you're neutralizing acid with base</div>
     </div>
 
